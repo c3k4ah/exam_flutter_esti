@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "720253822464",
+    "project_id": "sondage-ff826",
+    "storage_bucket": "sondage-ff826.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:720253822464:android:3825dd6a0e9b79f3345ae5",
+        "android_client_info": {
+          "package_name": "com.dominick.calendar_ui"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7IQqXdqowS2Kmy45Zw5uZ009EJK8AOhI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:720253822464:android:6df3d3ae895b38ab345ae5",
+        "android_client_info": {
+          "package_name": "com.dominick.sondage"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7IQqXdqowS2Kmy45Zw5uZ009EJK8AOhI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
