@@ -1,6 +1,5 @@
 import 'package:calendar_view/calendar_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:objectbox/objectbox.dart';
 
 @Entity()

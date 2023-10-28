@@ -14,21 +14,21 @@ class ViewEventController extends GetxController {
   Rx<DateTime> dateEvent = DateTime.now().obs;
   Rx<DateTime> timeEvent = DateTime.now().obs;
   RxList<EventModel> events = <EventModel>[].obs;
-  RxInt colorEvent = Colors.blue.value.obs;
+  RxInt colorEvent = Colors.deepOrange.value.obs;
 
   List<Color> couleurs = [
     Colors.deepOrange,
-    Colors.green,
-    Colors.blue,
-    Colors.red,
+    Colors.green.shade900,
+    Colors.blue.shade900,
+    Colors.teal,
     Colors.purpleAccent,
   ];
   @override
   Future<void> onInit() async {
     await getAllEvents();
-    // _eventBox.watchEvent().listen((event) {
-    //   events(events);
-    // });
+    watchEvent().listen((event) {
+      events(event);
+    });
     super.onInit();
   }
 
@@ -36,7 +36,6 @@ class ViewEventController extends GetxController {
     final result = await _eventBox.getEventsList();
     result.fold((l) => printError(info: l.toString()), (r) {
       events(r);
-      print('events: ${events.length}');
     });
   }
 
@@ -68,7 +67,7 @@ class ViewEventController extends GetxController {
       (l) => printError(info: l.message),
       (r) {
         isDone = r;
-        events.add(r);
+        cleanUp();
       },
     );
     return isDone;
@@ -96,5 +95,13 @@ class ViewEventController extends GetxController {
         pickedTime.minute,
       ));
     }
+  }
+
+  cleanUp() {
+    titleController.clear();
+    descriController.clear();
+    dateEvent(DateTime.now());
+    timeEvent(DateTime.now());
+    Get.back();
   }
 }

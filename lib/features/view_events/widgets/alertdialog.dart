@@ -174,7 +174,6 @@ class AddEventPopUp extends GetView<ViewEventController> {
                         if (controller.titleController.text.isNotEmpty &&
                             controller.descriController.text.isNotEmpty) {
                           await controller.addOneEvent();
-                          Get.back();
                         } else {
                           Get.snackbar(
                             'Erreur',
@@ -203,9 +202,7 @@ class AddEventPopUp extends GetView<ViewEventController> {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       onPressed: () async {
-                        controller.titleController.clear();
-                        controller.descriController.clear();
-                        Get.back();
+                        controller.cleanUp();
                       },
                       child: const Text(
                         'Annuler',
